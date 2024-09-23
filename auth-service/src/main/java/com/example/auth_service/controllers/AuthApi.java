@@ -2,6 +2,7 @@ package com.example.auth_service.controllers;
 
 import com.example.auth_service.commons.consants.ApiPathConstants;
 import com.example.auth_service.commons.dto.TokenResponse;
+import com.example.auth_service.commons.dto.UserLogin;
 import com.example.auth_service.commons.dto.UserRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -14,4 +15,7 @@ public interface AuthApi {
 
     @GetMapping()
     ResponseEntity<String>getUser(@RequestAttribute(name = "X-User-Id") String userId );
+
+    @PostMapping(ApiPathConstants.LOGIN_ROUTE)
+    ResponseEntity<TokenResponse> login(@RequestBody @Valid UserLogin userLogin);
 }
