@@ -42,3 +42,22 @@ Swagger
 ```
 http://localhost:8080/swagger-ui/index.html
 ```
+
+### Proyecto 2
+
+Registrar usuario
+```
+curl --location 'localhost:8080/v1/auth/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "email": "test@test.cl",
+  "password": "12345",
+  "name": "Sebastian"
+}'
+```
+
+EndPoint de prueba
+```
+curl --location 'localhost:8080/v1/auth' \
+--header 'Authorization: Bearer ...'
+```

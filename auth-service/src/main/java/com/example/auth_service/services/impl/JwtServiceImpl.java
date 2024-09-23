@@ -27,7 +27,7 @@ public class JwtServiceImpl implements JwtService {
                 .setSubject(String.valueOf(userId))
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(expirationDate)
-                .signWith(SignatureAlgorithm.ES512, this.secretToken)
+                .signWith(SignatureAlgorithm.HS512, this.secretToken)
                 .compact();
 
         return TokenResponse
