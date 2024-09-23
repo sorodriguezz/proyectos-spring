@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class GameController implements GameApi {
 
@@ -25,5 +27,20 @@ public class GameController implements GameApi {
     @Override
     public ResponseEntity<Game> getGameById(String id) {
         return ResponseEntity.ok(this.gameService.getGameById(id));
+    }
+
+    @Override
+    public ResponseEntity<List<Game>> getAllGames() {
+        return ResponseEntity.ok(this.gameService.getAllGames());
+    }
+
+    @Override
+    public ResponseEntity<Game> updateGame(String id, Game game) {
+        return ResponseEntity.ok(this.gameService.updateGame(id, game));
+    }
+
+    @Override
+    public void deleteGame(String id) {
+        this.gameService.deleteGame(id);
     }
 }

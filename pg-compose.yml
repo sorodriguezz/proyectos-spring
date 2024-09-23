@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: usuario
+      POSTGRES_DB: proyectos
+    ports:
+      - "5432:5432"
+
