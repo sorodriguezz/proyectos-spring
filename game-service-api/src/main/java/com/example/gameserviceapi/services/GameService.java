@@ -1,17 +1,9 @@
 package com.example.gameserviceapi.services;
 
-import com.example.gameserviceapi.entities.Game;
-import com.example.gameserviceapi.repositories.GameRepository;
-import org.springframework.stereotype.Service;
+import com.example.gameserviceapi.commons.entities.Game;
 
-@Service
-public class GameService {
-    private final GameRepository gameRepository;
+public interface GameService {
 
-    public GameService(GameRepository gameRepository) {
-        this.gameRepository = gameRepository;
-    }
-    public Game saveGame(Game game) {
-        return this.gameRepository.save(game);
-    }
+    Game saveGame(Game game);
+    Game getGameById(String id);
 }
