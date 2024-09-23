@@ -56,6 +56,16 @@ curl --location 'localhost:8080/v1/auth/register' \
 }'
 ```
 
+Login usuario
+```
+curl --location 'localhost:8080/v1/auth/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "email": "test@test.cl",
+  "password": "12345"
+}'
+```
+
 EndPoint de prueba
 ```
 curl --location 'localhost:8080/v1/auth' \
